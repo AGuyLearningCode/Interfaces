@@ -44,12 +44,17 @@ EJERCICIO 4:
 El nombre de la función debe ser distinto, por ejemplo funcion_fibonacci2.
 Haz commit y push.
 """
+##Importación de librerías
+import time
 ##Presentación del programa
 print('Ejercicio 4: Cálculo del enésimo valor de fibonacci')
 print(' ')
 ##Declaración de variables globales
 op='z'
 n=0
+start_time=0
+end_time=0
+elapsed_time=0
 ##Input
 print('Elije el método de cálculo del valor dentro de la sucesión de fibonacci.')
 print('a.:Ejecutar algoritmo por rangos.')
@@ -60,6 +65,7 @@ while (op != 'a') & (op != 'A') & (op != 'b') & (op != 'B'): # Bucle while. Oper
 	op = input('Tu respuesta. Debe ser a o b: ')
 ##Procesamiento 3
 if op=='a':
+	start_time=time.time()
 	##Código del ejercicio 3:
 	##Presentación del programa
 	print('Algoritmo por rangos.')
@@ -72,7 +78,11 @@ if op=='a':
 	from fibonacci import funcion_fibonacci
 
 	print('El valor correspondiente de la sucesión es: '+str(funcion_fibonacci(n)))
+	end_time=time.time()
+	elapsed_time=end_time-start_time
+	print('El tiempo de ejecución ha sido: ' + str(elapsed_time) + ' s')
 else:
+	start_time=time.time()
 	##Código del ejercicio 4:
 	##Presentación del programa
 	print('Algoritmo por inserción de dos valores.')
@@ -85,3 +95,6 @@ else:
 	from fibonacci2 import funcion_fibonacci
 
 	print('El valor correspondiente de la sucesión es: '+str(funcion_fibonacci(n)))
+	end_time=time.time()
+	elapsed_time=end_time-start_time
+	print('El tiempo de ejecución ha sido: ' + str(elapsed_time) + ' s')
