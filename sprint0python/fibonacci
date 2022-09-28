@@ -1,2 +1,0 @@
-for i in range(5): # Bucle for sobre un rango
-print(i)
