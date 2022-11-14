@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Catalog</string>
+    <string name="navegar_details">Navegar al detalle</string>
 </resources>
