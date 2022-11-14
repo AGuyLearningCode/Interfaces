@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">My Catalog</string>
     <string name="navegar_details">Navegar al detalle</string>
+    <string name="titulo_detail">Pantalones Vaqueros muy Guapos</string>
+    <string name="detail_description">Pantalones de la moda.</string>
+    <string name="like_it">Me gusta</string>
 </resources>
