@@ -4,4 +4,7 @@
     <string name="titulo_detail">Pantalones Vaqueros muy Guapos</string>
     <string name="detail_description">Pantalones de la moda.</string>
     <string name="like_it">Me gusta</string>
+    <string name="disenador_nombre">Victorio y Luquino</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
 </resources>
