@@ -44,5 +44,6 @@ public class AboutActivity extends AppCompatActivity  implements NavigationView.
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
     }
 }
