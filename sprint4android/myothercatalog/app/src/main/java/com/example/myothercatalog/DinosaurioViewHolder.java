@@ -48,6 +48,11 @@ public class DinosaurioViewHolder  extends RecyclerView.ViewHolder{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity, DetailActivity.class);
+
+                intent.putExtra("nombre",data.getName());
+                intent.putExtra("descripcion", data.getDescription());
+                intent.putExtra("url", data.getImageUrl());
+
                 activity.startActivity(intent);
             }
         });
