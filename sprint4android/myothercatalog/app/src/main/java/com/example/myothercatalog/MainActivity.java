@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-
-
+                        DinosaurioAdapter dinosaurioAdapter = new DinosaurioAdapter(dinosaurios, MainActivity.this);
+                        dinosaurioRecyclerView.setAdapter(dinosaurioAdapter);
 
                     }
                 },

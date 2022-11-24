@@ -17,7 +17,7 @@ public class DinosaurioData {
     public DinosaurioData(JSONObject jsonObject) throws JSONException {
         this.name = jsonObject.getString("name");
         this.description = jsonObject.getString("description");
-        this.imageUrl = jsonObject.getString("imageUrl");
+        this.imageUrl = jsonObject.getString("image_url");
     }
 
     public String getName() {
