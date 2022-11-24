@@ -1,6 +1,7 @@
 package com.example.myothercatalog;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.Image;
 import android.view.View;
@@ -43,5 +44,12 @@ public class DinosaurioViewHolder  extends RecyclerView.ViewHolder{
         
         RequestQueue cola = Volley.newRequestQueue(this.imageView.getContext());
         cola.add(request);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, DetailActivity.class);
+                activity.startActivity(intent);
+            }
+        });
     }
 }
