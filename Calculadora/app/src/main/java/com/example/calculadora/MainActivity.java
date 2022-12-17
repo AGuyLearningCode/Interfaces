@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
     TextView pantalla;
     char operacion = ' ';
     double valorAnterior;
-
-
+    boolean comprobadorIgualPrevio =false;//Compruebo si acabo de realizar o no un igual. Y si es así, borro la cadena.
+    boolean marcadoOperacion=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +47,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickDigito(View view){
+        if(comprobadorIgualPrevio){
+            valorActual="";
+            comprobadorIgualPrevio =false;
+        }
+        if(marcadoOperacion){
+            String valorActualConvertido = valorActual.replace(',','.');
+            valorAnterior=Double.parseDouble(valorActualConvertido);
+            valorActual = "0";
+            marcadoOperacion = false;
+        }
         if (valorActual.equals("0")) {
             valorActual="";
         }
@@ -111,10 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 operacion='/';
                 break;
         }
-        String valorActualConvertido = valorActual.replace(',','.');
-        valorAnterior=Double.parseDouble(valorActualConvertido);
-        valorActual = "0";
-        refrescarPantalla();
+        marcadoOperacion = true;
     }
 
     public void clickAC (View view){
@@ -125,7 +132,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickIgual(View view){
-
+        String valorActualConvertido = valorActual.replace(',','.');
+        double valorOperando=Double.parseDouble(valorActualConvertido);
+        double resultado;
+        switch(operacion){
+            case '+':
+                resultado=valorAnterior+valorOperando;
+                break;
+            case '-':
+                resultado=valorAnterior-valorOperando;
+                break;
+            case '*':
+                resultado=valorAnterior*valorOperando;
+                break;
+            case '/':
+                resultado=valorAnterior/valorOperando;
+                break;
+            default:
+                return;
+        }
+        valorActual=""+resultado;
+        refrescarPantalla();
+        comprobadorIgualPrevio =true;
     }
 
 }
